@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import Box from "./Box";
+import Button from "./Button";
+import Form from "./Form";
 
 function App() {
+  const [colorname, setcolorname] = useState("");
+  const [change, setchange] = useState(true);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Box colorname={colorname} change={change} />
+      <Form colorname={colorname} setcolorname={setcolorname} />
+      <Button setchange={setchange} />
     </div>
   );
 }
